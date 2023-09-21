@@ -6,6 +6,10 @@
 const express = require('express');
 const app = express();
 
+const path = require('path');
+
+// 'process.env.PORT' => whatever is in the environment variable PORT on Vercel's end is what gets assigned as the port number.
+// Otherwise it uses 3000 or (whatever port number you put there).
 const PORT = process.env.PORT || 3000;
 
 // app.set('view engine', 'pug');
@@ -20,7 +24,9 @@ app.set("view engine", "pug");
 // This line is for the html files in the public folder
 app.use(express.static(__dirname + "public"));
 // This line is for the assets in the public folder (e.g., images) - doesn't work?
-app.use(express.static("public"));
+// app.use(express.static("public"));
+
+app.use('/static', express.static(path.join(__dirname + '/public')));
 
 // The send() method of the Response object is used to send a simple string as a response.
 // app.get('/', (req, res) => res.send('Hello World!'));
