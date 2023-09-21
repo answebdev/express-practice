@@ -1,21 +1,5 @@
 {
     "version": 2,
-    "images": {
-        "sizes": [256, 640, 1080, 2048, 3840],
-        "remotePatterns": [
-          {
-            "protocol": "https",
-            "hostname": "example.com",
-            "port": "3000",
-            "pathname": "/account123/**"
-          }
-        ],
-        "minimumCacheTTL": 60,
-        "formats": ["image/png"],
-        "dangerouslyAllowSVG": false,
-        "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
-        "contentDispositionType": "inline"
-      },
     "builds": [
         {
             "src": "./index.js",
