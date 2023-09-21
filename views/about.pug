@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title #{name}
+  link(rel='icon' href='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Status_iucn_EX_icon.svg/480px-Status_iucn_EX_icon.svg.png')
+style.
+  body {
+  background-color: steelblue;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 4em;
+  }
+  nav {
+  display: block;
+  }
+  div {
+  text-align: center;
+  }
+  h1 {
+  text-align: center;
+  }
+
+body
+ nav
+  a(href='/') Home
+  |  | 
+  a(href='/resources') Resources
+  |  | 
+  a(href='/about') Pug Page
+  |  | 
+  a(href='/download') Download
+  |  |
+h1 #{name}
+br
+div
+  p
+    | Pug is a template engine for server-side Node.js applications. See 
+  a(href='https://expressjs.com/en/resources/template-engines.html' target='"_blank"') here
+  |  for other Express template engines.
+  p
+    a(href='https://flaviocopes.com/pug/' target='"_blank"') The Pug Guide
+
+
