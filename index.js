@@ -6,6 +6,12 @@ const express = require('express');
 const app = express();
 
 // app.set('view engine', 'pug');
+
+// Use the following three lines instead of the previous line: app.set('view engine', 'pug');
+// to delpoy 'pug' template pages on Vercel;
+// otherwise, there will be an Internal Service Error when trying to go to the Pug pages,
+// and the pages will not show.
+// Source: https://stackoverflow.com/questions/76701896/how-should-i-change-the-views-directory-for-vercel-deployment
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 app.use(express.static(__dirname + "public"));
@@ -35,7 +41,7 @@ app.get('/about', (req, res) => {
 // When this file is downloaded, the file will be called 'user-facing-filename.pdf' (second argument),
 // though it can be alled anything.
 app.get('/download', function (req, res) {
-    res.download('./test.pdf', 'user-facing-filename.pdf');
+    res.download('./public/test.pdf', 'user-facing-filename.pdf');
 });
 
 app.listen(3000, () => console.log('Server ready...'));
