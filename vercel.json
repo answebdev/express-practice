@@ -6,7 +6,7 @@
           {
             "protocol": "https",
             "hostname": "example.com",
-            "port": "",
+            "port": "3000",
             "pathname": "/account123/**"
           }
         ],
