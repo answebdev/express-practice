@@ -49,6 +49,9 @@ app.get('/about', (req, res) => {
 // When this file is downloaded, the file will be called 'user-facing-filename.pdf' (second argument),
 // though it can be alled anything.
 app.get('/download', function (req, res) {
+    res
+        .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+        .send("<html><head></head><body></body></html>");
     // res.download('./public/test.pdf', 'user-facing-filename.pdf');
     // res.download('test.pdf', 'user-facing-filename.pdf');
     res.download('./test.pdf', 'user-facing-filename.pdf');
