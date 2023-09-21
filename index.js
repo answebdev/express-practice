@@ -6,6 +6,8 @@
 const express = require('express');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 // app.set('view engine', 'pug');
 
 // Use the following 3-4 (4th is optional) lines instead of the previous line: app.set('view engine', 'pug');
@@ -51,4 +53,5 @@ app.get('/download', function (req, res) {
 });
 
 
-app.listen(3000, () => console.log('Server ready...'));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+// app.listen(3000, () => console.log('Server ready...'));
