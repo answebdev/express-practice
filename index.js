@@ -15,6 +15,7 @@ const app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 app.use(express.static(__dirname + "public"));
+app.use(express.static("public"));
 
 // The send() method of the Response object is used to send a simple string as a response.
 // app.get('/', (req, res) => res.send('Hello World!'));
@@ -42,6 +43,7 @@ app.get('/about', (req, res) => {
 // though it can be alled anything.
 app.get('/download', function (req, res) {
     res.download('./public/test.pdf', 'user-facing-filename.pdf');
+    // res.download('./test.pdf', 'user-facing-filename.pdf');
 });
 
 app.listen(3000, () => console.log('Server ready...'));
