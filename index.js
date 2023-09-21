@@ -15,7 +15,6 @@ const app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 app.use(express.static(__dirname + "public"));
-app.use(express.static("public"));
 
 // The send() method of the Response object is used to send a simple string as a response.
 // app.get('/', (req, res) => res.send('Hello World!'));
