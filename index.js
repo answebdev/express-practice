@@ -42,7 +42,8 @@ app.get('/about', (req, res) => {
 // though it can be alled anything.
 app.get('/download', function (req, res) {
     // res.download('./public/test.pdf', 'user-facing-filename.pdf');
-    res.download('test.pdf', 'user-facing-filename.pdf');
+    // res.download('test.pdf', 'user-facing-filename.pdf');
+    res.download('./test.pdf', 'user-facing-filename.pdf');
 });
 
 app.listen(3000, () => console.log('Server ready...'));
