@@ -18,7 +18,7 @@ app.set("view engine", "pug");
 // This line is for the html files in the public folder
 app.use(express.static(__dirname + "public"));
 // This line is for the assets in the public folder (e.g., images)
-app.use(express.static("public"));
+app.use(express.static("./public/"));
 
 // The send() method of the Response object is used to send a simple string as a response.
 // app.get('/', (req, res) => res.send('Hello World!'));
